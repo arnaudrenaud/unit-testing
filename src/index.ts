@@ -7,4 +7,5 @@ type Article = {
 
 export function getShippingCost(articles: Article[]): number {
   // frais de port : 10 euros par kilogramme du poids total
+  return 0;
 }
