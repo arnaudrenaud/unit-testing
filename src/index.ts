@@ -14,8 +14,11 @@ export function getShippingCost(articles: Article[]): number {
   if (totalArticlesPrice >= 10000) {
     return 0;
   }
+
   return articles.reduce(
-    (cost, article) => cost + article.weightG * article.quantity,
+    (cost, article) =>
+      cost +
+      article.quantity * (article.specialShippingCost || article.weightG),
     0
   );
 }
