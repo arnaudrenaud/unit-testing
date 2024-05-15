@@ -3,6 +3,7 @@ export type Article = {
   price: number;
   weightG: number;
   quantity: number;
+  specialShippingCost?: number;
 };
 
 export function getShippingCost(articles: Article[]): number {
