@@ -1,4 +1,4 @@
-type Article = {
+export type Article = {
   name: string;
   price: number;
   weightG: number;
@@ -6,6 +6,8 @@ type Article = {
 };
 
 export function getShippingCost(articles: Article[]): number {
-  // frais de port : 10 euros par kilogramme du poids total
-  return 0;
+  return articles.reduce(
+    (cost, article) => cost + article.weightG * article.quantity,
+    0
+  );
 }
